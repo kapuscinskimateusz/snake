@@ -1,0 +1,31 @@
+@import "variables.css";
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--clr-body-bg);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-board {
+  width: 100vmin;
+  height: 100vmin;
+  background-color: var(--clr-gameBoard-bg);
+  display: grid;
+}
+
+.snake,
+.food {
+  border: 0.25vmin solid var(--clr-border);
+}
+
+.snake {
+  background-color: var(--clr-snake-bg);
+}
+
+.food {
+  background-color: var(--clr-food-bg);
+}
