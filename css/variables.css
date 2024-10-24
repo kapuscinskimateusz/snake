@@ -1,9 +1,7 @@
 :root {
   --clr-body-bg: black;
   --clr-gameBoard-bg: lightgray;
-
   --clr-border: black;
-
   --clr-snake-bg: green;
   --clr-food-bg: red;
 }

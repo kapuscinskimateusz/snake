@@ -8,6 +8,35 @@
     <script type="module" src="game.js" defer></script>
   </head>
   <body>
+    <dialog id="pause-menu" class="dialog">
+      <div class="dialog__header">
+        <div class="dialog__title">Pause Menu</div>
+      </div>
+      <div class="dialog__body">
+        <ul>
+          <li>
+            <button id="resume" class="button button--wide">Resume</button>
+          </li>
+          <li>
+            <button class="restart-btn button button--wide">Restart</button>
+          </li>
+        </ul>
+      </div>
+    </dialog>
+
+    <dialog id="game-over" class="dialog">
+      <div class="dialog__header">
+        <div class="dialog__title">Game Over</div>
+      </div>
+      <div class="dialog__body">
+        <ul>
+          <li>
+            <button class="restart-btn button button--wide">Restart</button>
+          </li>
+        </ul>
+      </div>
+    </dialog>
+
     <div id="game-board"></div>
   </body>
 </html>
