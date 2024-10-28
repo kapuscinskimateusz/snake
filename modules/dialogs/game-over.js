@@ -1,5 +1,7 @@
+import { restartGame } from "../game.js";
+
 const gameOver = document.getElementById("game-over");
-const restartBtn = document.querySelector("#game-over .restart-btn");
+const restartBtn = gameOver.querySelector(".restart-btn");
 
 export function open() {
   gameOver.showModal();
@@ -14,5 +16,6 @@ export function close() {
 }
 
 function handleRestart() {
-  alert("restart");
+  close();
+  restartGame();
 }

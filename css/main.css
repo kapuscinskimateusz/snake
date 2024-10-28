@@ -13,19 +13,37 @@ body {
   align-items: center;
 }
 
+.hidden {
+  display: none;
+}
+
+#main-menu,
 #game-board {
   width: 100vmin;
   height: 100vmin;
+}
+
+#main-menu {
+  background-color: var(--clr-mainMenu-bg);
+}
+
+#game-board {
   background-color: var(--clr-gameBoard-bg);
-  display: grid;
-}
 
-.snake {
-  background-color: var(--clr-snake-bg);
-  border: 0.25vmin solid var(--clr-border);
-}
+  &:not(.hidden) {
+    display: grid;
 
-.food {
-  background-color: var(--clr-food-bg);
-  border: 0.25vmin solid var(--clr-border);
+    .snake,
+    .food {
+      border: 0.25vmin solid var(--clr-border);
+    }
+
+    .snake {
+      background-color: var(--clr-snake-bg);
+    }
+
+    .food {
+      background-color: var(--clr-food-bg);
+    }
+  }
 }

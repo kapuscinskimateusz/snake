@@ -5,38 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake</title>
     <link rel="stylesheet" href="css/main.css" />
-    <script type="module" src="game.js" defer></script>
+    <script type="module" src="main-menu.js" defer></script>
   </head>
   <body>
-    <dialog id="pause-menu" class="dialog">
-      <div class="dialog__header">
-        <div class="dialog__title">Pause Menu</div>
-      </div>
-      <div class="dialog__body">
+    <div id="app">
+      <div id="main-menu">
+        <header>
+          <h1>Snake</h1>
+        </header>
         <ul>
           <li>
-            <button id="resume" class="button button--wide">Resume</button>
+            <button id="play-btn" class="button button--wide">Play</button>
+          </li>
+          <li><button class="button button--wide">Options</button></li>
+          <li>
+            <button id="about-btn" class="button button--wide">About</button>
           </li>
           <li>
-            <button class="restart-btn button button--wide">Restart</button>
+            <button id="exit-btn" class="button button--wide">Exit</button>
           </li>
         </ul>
       </div>
-    </dialog>
 
-    <dialog id="game-over" class="dialog">
-      <div class="dialog__header">
-        <div class="dialog__title">Game Over</div>
-      </div>
-      <div class="dialog__body">
-        <ul>
-          <li>
-            <button class="restart-btn button button--wide">Restart</button>
-          </li>
-        </ul>
-      </div>
-    </dialog>
+      <div id="game-board" class="hidden"></div>
 
-    <div id="game-board"></div>
+      <dialog id="pause-menu" class="dialog">
+        <div class="dialog__header">
+          <div class="dialog__title">Pause Menu</div>
+        </div>
+        <div class="dialog__body">
+          <ul>
+            <li>
+              <button id="resume-btn" class="button button--wide">
+                Resume
+              </button>
+            </li>
+            <li>
+              <button class="restart-btn button button--wide">Restart</button>
+            </li>
+            <li>
+              <button id="home-btn" class="button button--wide">Home</button>
+            </li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="game-over" class="dialog">
+        <div class="dialog__header">
+          <div class="dialog__title">Game Over</div>
+        </div>
+        <div class="dialog__body">
+          <ul>
+            <li>
+              <button class="restart-btn button button--wide">Restart</button>
+            </li>
+          </ul>
+        </div>
+      </dialog>
+    </div>
   </body>
 </html>

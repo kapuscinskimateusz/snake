@@ -1,29 +1,32 @@
-import { resumeGame } from "../../game.js";
+import { resumeGame, restartGame, endGame } from "../game.js";
 
 const pauseMenu = document.getElementById("pause-menu");
-const resumeBtn = document.querySelector("#pause-menu #resume");
-const restartBtn = document.querySelector("#pause-menu .restart-btn");
+const resumeBtn = document.getElementById("resume-btn");
+const restartBtn = pauseMenu.querySelector(".restart-btn");
+const homeBtn = document.getElementById("home-btn");
 
-export function open(callback) {
+export function open() {
   pauseMenu.showModal();
-  callback();
 
-  resumeBtn.addEventListener("click", handleResume);
+  resumeBtn.addEventListener("click", resumeGame);
   restartBtn.addEventListener("click", handleRestart);
+  homeBtn.addEventListener("click", handleHome);
 }
 
 export function close() {
   pauseMenu.close();
 
-  resumeBtn.removeEventListener("click", handleResume);
+  resumeBtn.removeEventListener("click", resumeGame);
   restartBtn.removeEventListener("click", handleRestart);
-}
-
-function handleResume() {
-  close();
-  resumeGame();
+  homeBtn.removeEventListener("click", handleHome);
 }
 
 function handleRestart() {
-  alert("restart");
+  close();
+  restartGame();
+}
+
+function handleHome() {
+  close();
+  endGame();
 }

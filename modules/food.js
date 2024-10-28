@@ -21,6 +21,10 @@ export function draw(gameBoard) {
   gameBoard.appendChild(foodElement);
 }
 
+export function resetFood() {
+  food = getRandomFoodPosition();
+}
+
 function getRandomFoodPosition() {
   let newFoodPosition;
   while (!newFoodPosition || onSnake(newFoodPosition)) {

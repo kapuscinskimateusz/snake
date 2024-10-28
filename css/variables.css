@@ -1,5 +1,6 @@
 :root {
   --clr-body-bg: black;
+  --clr-mainMenu-bg: darkgray;
   --clr-gameBoard-bg: lightgray;
   --clr-border: black;
   --clr-snake-bg: green;
