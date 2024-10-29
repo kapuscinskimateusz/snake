@@ -1,4 +1,4 @@
-import { isGamePaused, pauseGame, resumeGame } from "./game.js";
+import { isGameOver, isGamePaused, pauseGame, resumeGame } from "./game.js";
 
 const INITIAL_INPUT_DIRECTION = { x: 0, y: 0 };
 
@@ -28,6 +28,8 @@ function handleInput(event) {
   switch (event.key) {
     case "Escape":
       event.preventDefault();
+
+      if (isGameOver) return;
 
       if (isGamePaused) {
         resumeGame();

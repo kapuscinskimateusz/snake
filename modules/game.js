@@ -24,7 +24,7 @@ gameBoard.style.gridTemplateColumns = `repeat(${GRID_SIZE}, 1fr)`;
 
 let lastRenderTime = 0;
 
-let isGameOver = false;
+export let isGameOver = false;
 export let isGamePaused = false;
 
 function main(currentTime) {
@@ -82,11 +82,13 @@ function checkDeath() {
 
 export function pauseGame() {
   isGamePaused = true;
+
   openPauseMenu();
 }
 
 export function resumeGame() {
   isGamePaused = false;
+
   closePauseMenu();
 }
 
