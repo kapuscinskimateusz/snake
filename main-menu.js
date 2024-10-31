@@ -1,9 +1,14 @@
-import { startGame } from "./modules/game.js";
+import { changeLanguage } from "./js/i18n.js";
+import { startGame } from "./js/game.js";
 
 const mainMenu = document.getElementById("main-menu");
-const playBtn = document.getElementById("play-btn");
+
+const campaignBtn = document.getElementById("campaign-btn");
+const optionsBtn = mainMenu.querySelector(".options-btn");
 const aboutBtn = document.getElementById("about-btn");
 const exitBtn = document.getElementById("exit-btn");
+
+changeLanguage("pl");
 
 addEventListeners();
 
@@ -16,18 +21,23 @@ export function open() {
 export function close() {
   mainMenu.classList.add("hidden");
 
-  playBtn.removeEventListener("click", handlePlay);
+  campaignBtn.removeEventListener("click", handleCampaign);
+  optionsBtn.removeEventListener("click", handleOptions);
   aboutBtn.removeEventListener("click", handleAbout);
   exitBtn.removeEventListener("click", handleExit);
 }
 
-function handlePlay() {
+function handleCampaign() {
   close();
   startGame();
 }
 
+function handleOptions() {
+  alert("Options");
+}
+
 function handleAbout() {
-  console.log("about");
+  alert("About");
 }
 
 function handleExit() {
@@ -35,7 +45,8 @@ function handleExit() {
 }
 
 function addEventListeners() {
-  playBtn.addEventListener("click", handlePlay);
+  campaignBtn.addEventListener("click", handleCampaign);
+  optionsBtn.addEventListener("click", handleOptions);
   aboutBtn.addEventListener("click", handleAbout);
   exitBtn.addEventListener("click", handleExit);
 }

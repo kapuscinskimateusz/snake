@@ -1,0 +1,16 @@
+{
+  "snake_game": "Gra w węża",
+
+  "language_pl": "Polski",
+  "language_en": "Angielski",
+
+  "campaign": "Kampania",
+  "options": "Opcje",
+  "about": "O grze",
+  "exit": "Wyjdź",
+  "pause_menu": "Menu pauzy",
+  "resume": "Wznów",
+  "restart": "Restartuj",
+  "main_menu": "Menu główne",
+  "game_over": "Koniec gry"
+}
