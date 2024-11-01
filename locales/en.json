@@ -5,12 +5,8 @@
   "language_en": "English",
 
   "campaign": "Campaign",
-  "options": "Options",
-  "about": "About",
-  "exit": "Exit",
-  "pause_menu": "Pause menu",
-  "resume": "Resume",
-  "restart": "Restart",
-  "main_menu": "Main menu",
-  "game_over": "Game over"
+  "level": "Level",
+  "start_level": "Start level",
+  "close": "Close",
+  "exit": "Exit"
 }

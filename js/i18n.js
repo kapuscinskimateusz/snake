@@ -14,6 +14,10 @@ export async function changeLanguage(language) {
   updateTexts();
 }
 
+export function translate(key) {
+  return translations[key] || key;
+}
+
 async function loadTranslation(language) {
   try {
     const response = await fetch(`../locales/${language}.json`);

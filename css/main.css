@@ -1,9 +1,6 @@
 @import "reset.css";
 @import "variables.css";
 
-@import "dialog.css";
-@import "button.css";
-
 body {
   width: 100vw;
   height: 100vh;
@@ -17,6 +14,34 @@ body {
   display: none;
 }
 
+.main-menu,
+.campaign {
+  width: 100vmin;
+  height: 100vmin;
+}
+
+.main-menu {
+  background-color: var(--clr-mainMenu-bg);
+}
+
+.campaign {
+  background-color: var(--clr-campaign-bg);
+}
+
+.campaign__levels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.campaign__level {
+  aspect-ratio: 1/1;
+  border: 1px solid var(--clr-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
 #main-menu,
 #game-board {
   width: 100vmin;
@@ -46,4 +71,4 @@ body {
       background-color: var(--clr-food-bg);
     }
   }
-}
+} */
