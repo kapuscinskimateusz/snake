@@ -1,0 +1,12 @@
+[
+  {
+    "level": 1,
+    "targetScore": 5,
+    "obstacles": []
+  },
+  {
+    "level": 2,
+    "targetScore": 10,
+    "obstacles": []
+  }
+]

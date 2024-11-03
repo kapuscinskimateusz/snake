@@ -34,75 +34,21 @@
 
         <button class="campaign__back-btn">&larr;</button>
 
-        <div class="campaign__levels">
-          <div data-level="1" class="campaign__level">
-            <span data-translate-key="level"></span> 1
-          </div>
-          <div data-level="2" class="campaign__level">
-            <span data-translate-key="level"></span> 2
-          </div>
-          <div data-level="3" class="campaign__level">
-            <span data-translate-key="level"></span> 3
-          </div>
-          <div data-level="4" class="campaign__level">
-            <span data-translate-key="level"></span> 4
-          </div>
-          <div data-level="5" class="campaign__level">
-            <span data-translate-key="level"></span> 5
-          </div>
-        </div>
+        <div class="campaign__level-grid"></div>
 
         <dialog id="level-dialog">
           <h3 class="level-dialog__title"></h3>
-          <p class="level-dialog__description">Opis poziomu tutaj...</p>
-          <button data-translate-key="start_level"></button>
+          <p class="level-dialog__description"></p>
+          <button
+            data-translate-key="start_level"
+            class="level-dialog__start-btn"
+          ></button>
           <button
             data-translate-key="close"
             class="level-dialog__close-btn"
           ></button>
         </dialog>
       </section>
-    </div>
-
-    <!-- <div id="app">
-      <div id="main-menu">
-        <header class="main-menu__header">
-          <h1 data-translate-key="snake_game"></h1>
-          <select name="language" id="language">
-            <option value="pl" data-translate-key="language_pl"></option>
-            <option value="en" data-translate-key="language_en"></option>
-          </select>
-        </header>
-        <ul>
-          <li>
-            <button
-              id="campaign-btn"
-              data-translate-key="campaign"
-              class="button button--wide"
-            ></button>
-          </li>
-          <li>
-            <button
-              data-translate-key="options"
-              class="options-btn button button--wide"
-            ></button>
-          </li>
-          <li>
-            <button
-              id="about-btn"
-              data-translate-key="about"
-              class="button button--wide"
-            ></button>
-          </li>
-          <li>
-            <button
-              id="exit-btn"
-              data-translate-key="exit"
-              class="button button--wide"
-            ></button>
-          </li>
-        </ul>
-      </div>
 
       <div id="game-board" class="hidden"></div>
 
@@ -151,6 +97,7 @@
           </ul>
         </div>
       </dialog>
-    </div> -->
+    </div>
+    </div>
   </body>
 </html>
