@@ -8,5 +8,9 @@
   "level": "Poziom",
   "start_level": "Rozpocznij poziom",
   "close": "Zamknij",
-  "exit": "Wyjdź"
+  "exit": "Wyjdź",
+  "game_over": "Koniec gry",
+  "restart": "Restartuj",
+  "resume": "Wznów",
+  "main_menu": "Menu główne"
 }

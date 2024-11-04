@@ -8,5 +8,9 @@
   "level": "Level",
   "start_level": "Start level",
   "close": "Close",
-  "exit": "Exit"
+  "exit": "Exit",
+  "game_over": "Game over",
+  "restart": "Restart",
+  "resume": "Resume",
+  "main_menu": "Main menu"
 }

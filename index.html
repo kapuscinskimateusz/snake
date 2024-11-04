@@ -52,7 +52,7 @@
 
       <div id="game-board" class="hidden"></div>
 
-      <dialog id="pause-menu" class="dialog">
+      <dialog id="pause-menu" class="pause-menu dialog">
         <div class="dialog__header">
           <div data-translate-key="pause_menu" class="dialog__title"></div>
         </div>
@@ -60,29 +60,27 @@
           <ul>
             <li>
               <button
-                id="resume-btn"
                 data-translate-key="resume"
-                class="button button--wide"
+                class="pause-menu__resume-btn button button--wide"
               ></button>
             </li>
             <li>
               <button
                 data-translate-key="restart"
-                class="restart-btn button button--wide"
+                class="pause-menu__restart-btn button button--wide"
               ></button>
             </li>
             <li>
               <button
-                id="main-menu-btn"
                 data-translate-key="main_menu"
-                class="button button--wide"
+                class="pause-menu__main-menu-btn button button--wide"
               ></button>
             </li>
           </ul>
         </div>
       </dialog>
 
-      <dialog id="game-over" class="dialog">
+      <dialog id="game-over" class="game-over dialog">
         <div class="dialog__header">
           <div data-translate-key="game_over" class="dialog__title"></div>
         </div>
@@ -91,13 +89,12 @@
             <li>
               <button
                 data-translate-key="restart"
-                class="restart-btn button button--wide"
+                class="game-over__restart-btn button button--wide"
               ></button>
             </li>
           </ul>
         </div>
       </dialog>
-    </div>
     </div>
   </body>
 </html>

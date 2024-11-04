@@ -1,8 +1,8 @@
+import { translate } from "./i18n.js";
 import { open as openLevelDialog } from "./dialogs/level-dialog.js";
 import { open as openMainMenu } from "../main-menu.js";
 
 const campaign = document.getElementById("campaign");
-const levelGrid = campaign.querySelector(".campaign__level-grid");
 const backBtn = campaign.querySelector(".campaign__back-btn");
 
 export async function open() {
@@ -34,17 +34,14 @@ async function loadLevels() {
   }
 }
 
-function clearLevelGrid() {
-  levelGrid.textContent = "";
-}
-
 function displayLevels(levels) {
-  clearLevelGrid();
+  const levelGrid = campaign.querySelector(".campaign__level-grid");
+  levelGrid.innerHTML = "";
 
   levels.forEach((level) => {
     const levelDiv = document.createElement("div");
     levelDiv.classList.add("campaign__level");
-    levelDiv.textContent = `Poziom ${level.level}`;
+    levelDiv.textContent = translate("level") + ` ${level.level}`;
     levelDiv.addEventListener("click", () => openLevelDialog(level));
 
     levelGrid.appendChild(levelDiv);

@@ -1,9 +1,9 @@
-import { resumeGame, restartGame, endGame } from "../game.js";
+import { resumeGame, leaveGame } from "../game.js";
 
 const pauseMenu = document.getElementById("pause-menu");
-const resumeBtn = document.getElementById("resume-btn");
-const restartBtn = pauseMenu.querySelector(".restart-btn");
-const mainMenuBtn = document.getElementById("main-menu-btn");
+const resumeBtn = pauseMenu.querySelector(".pause-menu__resume-btn");
+const restartBtn = pauseMenu.querySelector(".pause-menu__restart-btn");
+const mainMenuBtn = pauseMenu.querySelector(".pause-menu__main-menu-btn");
 
 export function open() {
   pauseMenu.showModal();
@@ -22,11 +22,10 @@ export function close() {
 }
 
 function handleRestart() {
-  close();
-  restartGame();
+  console.log("restart");
 }
 
 function handleMainMenu() {
   close();
-  endGame();
+  leaveGame();
 }

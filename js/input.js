@@ -1,27 +1,25 @@
 import { isGameOver, isGamePaused, pauseGame, resumeGame } from "./game.js";
 
-const INITIAL_INPUT_DIRECTION = { x: 0, y: 0 };
-
-let inputDirection = { ...INITIAL_INPUT_DIRECTION };
-let lastInputDirection = { ...INITIAL_INPUT_DIRECTION };
+let inputDirection = { x: 0, y: 0 };
+let lastInputDirection = { x: 0, y: 0 };
 
 export function enableInput() {
   window.addEventListener("keydown", handleInput);
 }
 
-export function disableInput() {
+export function disableInput({ clear = false } = {}) {
   window.removeEventListener("keydown", handleInput);
+
+  if (clear) {
+    inputDirection = { x: 0, y: 0 };
+    lastInputDirection = { x: 0, y: 0 };
+  }
 }
 
 export function getInputDirection() {
   lastInputDirection = inputDirection;
 
   return inputDirection;
-}
-
-export function clearInputDirection() {
-  inputDirection = { ...INITIAL_INPUT_DIRECTION };
-  lastInputDirection = { ...INITIAL_INPUT_DIRECTION };
 }
 
 function handleInput(event) {

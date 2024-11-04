@@ -1,12 +1,91 @@
 [
   {
     "level": 1,
-    "targetScore": 5,
-    "obstacles": []
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 2
+    },
+    "food": {
+      "startPosition": { "x": 3, "y": 3 }
+    },
+    "obstacles": [],
+    "targetScore": 10
   },
   {
     "level": 2,
-    "targetScore": 10,
-    "obstacles": []
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 5, "y": 5 },
+      "speed": 3
+    },
+    "food": {
+      "startPosition": { "x": 15, "y": 6 }
+    },
+    "obstacles": [
+      { "position": { "x": 10, "y": 5 } },
+      { "position": { "x": 15, "y": 10 } }
+    ],
+    "targetScore": 15
+  },
+  {
+    "level": 3,
+    "gridSize": 25,
+    "snake": {
+      "startPosition": { "x": 12, "y": 12 },
+      "speed": 3
+    },
+    "food": {
+      "startPosition": { "x": 14, "y": 8 }
+    },
+    "obstacles": [
+      { "position": { "x": 5, "y": 5 } },
+      { "position": { "x": 5, "y": 20 } },
+      { "position": { "x": 20, "y": 5 } },
+      { "position": { "x": 20, "y": 20 } }
+    ],
+    "targetScore": 20
+  },
+  {
+    "level": 4,
+    "gridSize": 30,
+    "snake": {
+      "startPosition": { "x": 15, "y": 15 },
+      "speed": 4
+    },
+    "food": {
+      "startPosition": { "x": 2, "y": 2 }
+    },
+    "obstacles": [
+      { "position": { "x": 10, "y": 10 } },
+      { "position": { "x": 10, "y": 20 } },
+      { "position": { "x": 20, "y": 10 } },
+      { "position": { "x": 20, "y": 20 } },
+      { "position": { "x": 15, "y": 5 } },
+      { "position": { "x": 15, "y": 25 } }
+    ],
+    "targetScore": 25
+  },
+  {
+    "level": 5,
+    "gridSize": 30,
+    "snake": {
+      "startPosition": { "x": 5, "y": 5 },
+      "speed": 5
+    },
+    "food": {
+      "startPosition": { "x": 15, "y": 10 }
+    },
+    "obstacles": [
+      { "position": { "x": 10, "y": 10 } },
+      { "position": { "x": 10, "y": 20 } },
+      { "position": { "x": 20, "y": 10 } },
+      { "position": { "x": 20, "y": 20 } },
+      { "position": { "x": 5, "y": 15 } },
+      { "position": { "x": 25, "y": 15 } },
+      { "position": { "x": 15, "y": 5 } },
+      { "position": { "x": 15, "y": 25 } }
+    ],
+    "targetScore": 30
   }
 ]

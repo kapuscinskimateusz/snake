@@ -1,11 +1,8 @@
 import { getInputDirection } from "./input.js";
 
-const INITIAL_SNAKE_BODY = [{ x: 11, y: 10 }];
-
-let snakeBody = JSON.parse(JSON.stringify(INITIAL_SNAKE_BODY));
+let snakeBody = [];
+export let snakeSpeed = null;
 let newSegments = 0;
-
-export const SNAKE_SPEED = 5;
 
 export function update() {
   addSegments();
@@ -31,6 +28,14 @@ export function draw(gameBoard) {
   });
 }
 
+export function setSnakePosition(position) {
+  snakeBody = [{ x: position.x, y: position.y }];
+}
+
+export function setSnakeSpeed(speed) {
+  snakeSpeed = speed;
+}
+
 export function getSnakeHead() {
   return snakeBody[0];
 }
@@ -49,10 +54,6 @@ export function onSnake(position, { ignoreHead = false } = {}) {
 
 export function snakeIntersection() {
   return onSnake(snakeBody[0], { ignoreHead: true });
-}
-
-export function resetSnake() {
-  snakeBody = JSON.parse(JSON.stringify(INITIAL_SNAKE_BODY));
 }
 
 function equalPositions(pos1, pos2) {
