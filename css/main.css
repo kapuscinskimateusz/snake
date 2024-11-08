@@ -57,9 +57,9 @@ body {
 
 .campaign__level {
   aspect-ratio: 1/1;
-  border: 1px solid var(--clr-border);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
+}
+
+.campaign__level:disabled {
+  cursor: not-allowed;
 }

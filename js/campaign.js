@@ -39,13 +39,23 @@ function displayLevels(levels) {
   levelGrid.innerHTML = "";
 
   levels.forEach((level) => {
-    const levelDiv = document.createElement("div");
-    levelDiv.classList.add("campaign__level");
-    levelDiv.textContent = translate("level") + ` ${level.level}`;
-    levelDiv.addEventListener("click", () => openLevelDialog(level));
+    const levelBtn = document.createElement("button");
+    levelBtn.classList.add("campaign__level");
+    levelBtn.textContent =
+      translate("level") +
+      ` ${level.level}` +
+      ` ${isLevelUnlocked(level.level) ? "🔓" : "🔒"}`;
+    levelBtn.addEventListener("click", () => openLevelDialog(level));
+    levelBtn.disabled = !isLevelUnlocked(level.level);
 
-    levelGrid.appendChild(levelDiv);
+    levelGrid.appendChild(levelBtn);
   });
+}
+
+function isLevelUnlocked(level) {
+  const lastUnlockedLevel = +localStorage.getItem("lastUnlockedLevel") || 1;
+
+  return level <= lastUnlockedLevel;
 }
 
 function handleBack() {
