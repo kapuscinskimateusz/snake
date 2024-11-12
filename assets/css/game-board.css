@@ -1,0 +1,13 @@
+#game-board {
+  &:not(.hidden) {
+    display: grid;
+  }
+
+  .snake {
+    background-color: green;
+  }
+
+  .food {
+    background-color: red;
+  }
+}

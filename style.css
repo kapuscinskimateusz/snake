@@ -1,0 +1,47 @@
+@import url("/assets/css/reset.css");
+@import url("/assets/css/form.css");
+@import url("/assets/css/button.css");
+
+/* VIEWS */
+@import url("/assets/css/campaign.css");
+@import url("/assets/css/game-board.css");
+
+@font-face {
+  font-family: "PixelUniCode";
+  src: url("/assets/fonts/Pixel-UniCode.ttf") format("truetype");
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  color: white;
+  font-family: "PixelUniCode", monospace;
+  text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
+}
+
+.box:not(.hidden) {
+  width: 100vmin;
+  height: 100vmin;
+  background-color: black;
+
+  &.box--menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vmin;
+
+    .box__title {
+      color: gold;
+      font-size: 15vmin;
+    }
+  }
+}

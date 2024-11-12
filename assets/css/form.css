@@ -1,0 +1,39 @@
+.form__fieldset {
+  border: none;
+}
+
+.form__legend {
+  font-size: 8vmin;
+}
+
+.form__controls {
+  display: flex;
+  align-items: center;
+  gap: 5vmin;
+}
+
+label {
+  font-size: 8vmin;
+}
+
+input[type="radio"] {
+  display: none;
+
+  & + label {
+    cursor: pointer;
+
+    &::before {
+      content: "\25AB";
+      display: inline-block;
+      margin-right: 1vmin;
+    }
+  }
+
+  &:checked + label {
+    color: gold;
+
+    &::before {
+      content: "\25AA";
+    }
+  }
+}

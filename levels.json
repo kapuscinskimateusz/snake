@@ -87,5 +87,70 @@
       { "position": { "x": 15, "y": 25 } }
     ],
     "targetScore": 30
+  },
+  {
+    "level": 6,
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 2
+    },
+    "food": {
+      "startPosition": { "x": 3, "y": 3 }
+    },
+    "obstacles": [],
+    "targetScore": 10
+  },
+  {
+    "level": 7,
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 2
+    },
+    "food": {
+      "startPosition": { "x": 3, "y": 3 }
+    },
+    "obstacles": [],
+    "targetScore": 10
+  },
+  {
+    "level": 8,
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 2
+    },
+    "food": {
+      "startPosition": { "x": 3, "y": 3 }
+    },
+    "obstacles": [],
+    "targetScore": 10
+  },
+  {
+    "level": 9,
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 2
+    },
+    "food": {
+      "startPosition": { "x": 3, "y": 3 }
+    },
+    "obstacles": [],
+    "targetScore": 10
+  },
+  {
+    "level": 10,
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 2
+    },
+    "food": {
+      "startPosition": { "x": 3, "y": 3 }
+    },
+    "obstacles": [],
+    "targetScore": 10
   }
 ]

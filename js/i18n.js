@@ -1,27 +1,17 @@
 let translations = {};
-let currentLanguage = "en";
-
-const languageSelect = document.getElementById("language");
-
-languageSelect.addEventListener("change", (event) => {
-  changeLanguage(event.target.value);
-});
+let currentLanguage = null;
 
 export async function changeLanguage(language) {
-  await loadTranslation(language);
+  await loadTranslations(language);
 
   currentLanguage = language;
   updateTexts();
 }
 
-export function translate(key) {
-  return translations[key] || key;
-}
-
-async function loadTranslation(language) {
+async function loadTranslations(language) {
   try {
-    const response = await fetch(`../locales/${language}.json`);
-    if (!response.ok) throw new Error("Nie udało się załadować tłumaczeń.");
+    const response = await fetch(`/locales/${language}.json`);
+    if (!response.ok) throw new Error("Nie udało się załadować tłumaczeń");
 
     translations = await response.json();
   } catch (err) {
@@ -30,7 +20,7 @@ async function loadTranslation(language) {
 }
 
 function updateTexts() {
-  const elements = document.querySelectorAll("[data-translate-key]");
+  const elements = document.querySelectorAll("[data-translate-key");
 
   elements.forEach((el) => {
     const key = el.getAttribute("data-translate-key");

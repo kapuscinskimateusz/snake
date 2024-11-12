@@ -1,16 +1,8 @@
 {
-  "snake_game": "Snake game",
-
-  "language_pl": "Polish",
-  "language_en": "English",
-
   "campaign": "Campaign",
-  "level": "Level",
-  "start_level": "Start level",
-  "close": "Close",
+  "options": "Options",
   "exit": "Exit",
-  "game_over": "Game over",
-  "restart": "Restart",
-  "resume": "Resume",
-  "main_menu": "Main menu"
+  "volume": "Volume",
+  "language": "Language",
+  "back": "Back"
 }

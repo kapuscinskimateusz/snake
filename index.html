@@ -4,97 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <script type="module" src="main-menu.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js" defer></script>
   </head>
   <body>
     <div id="app">
-      <section id="main-menu" class="main-menu">
-        <header class="main-menu__header">
-          <h1 data-translate-key="snake_game"></h1>
-          <select name="language" id="language">
-            <option value="pl" data-translate-key="language_pl"></option>
-            <option value="en" data-translate-key="language_en"></option>
-          </select>
+      <nav class="main-menu box box--menu hidden">
+        <header>
+          <h1 class="box__title">Snake Retro</h1>
         </header>
-        <nav>
-          <ul>
-            <li>
-              <button id="campaign-btn" data-translate-key="campaign"></button>
-            </li>
-            <li><button id="exit-btn" data-translate-key="exit"></button></li>
-          </ul>
-        </nav>
-      </section>
+        <ul>
+          <li>
+            <button data-translate-key="campaign" class="main-menu__campaign-btn button button--wide"></button>
+          </li>
+          <li>
+            <button data-translate-key="options" class="main-menu__options-btn button button--wide"></button>
+          </li>
+          <li>
+            <button data-translate-key="exit" class="main-menu__exit-btn button button--wide"></button>
+          </li>
+        </ul>
+      </nav>
 
-      <section id="campaign" class="campaign hidden">
-        <header class="campaign__header">
-          <h1 data-translate-key="campaign"></h1>
+      <section class="campaign box box--menu hidden">
+        <header>
+          <h1 data-translate-key="campaign" class="box__title"></h1>
         </header>
-
-        <button class="campaign__back-btn">&larr;</button>
-
         <div class="campaign__level-grid"></div>
-
-        <dialog id="level-dialog">
-          <h3 class="level-dialog__title"></h3>
-          <p class="level-dialog__description"></p>
-          <button
-            data-translate-key="start_level"
-            class="level-dialog__start-btn"
-          ></button>
-          <button
-            data-translate-key="close"
-            class="level-dialog__close-btn"
-          ></button>
-        </dialog>
+        <button data-translate-key="back" class="campaign__back-btn button"></button>
       </section>
 
-      <div id="game-board" class="hidden"></div>
+      <section class="options box box--menu hidden">
+        <header>
+          <h1 data-translate-key="options" class="box__title"></h1>
+        </header>
+        <form class="form">
+          <fieldset class="options__language form__fieldset">
+            <legend data-translate-key="language" class="form__legend"></legend>
+            <div class="form__controls">
+              <div class="form__control">
+                <input type="radio" name="language" id="language-pl" value="pl">
+                <label for="language-pl">PL</label>
+              </div>
+              <div class="form__control">
+                <input type="radio" name="language" id="language-en" value="en">
+                <label for="language-en">EN</label>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <button data-translate-key="back" class="options__back-btn button"></button>
+      </section>
 
-      <dialog id="pause-menu" class="pause-menu dialog">
-        <div class="dialog__header">
-          <div data-translate-key="pause_menu" class="dialog__title"></div>
-        </div>
-        <div class="dialog__body">
-          <ul>
-            <li>
-              <button
-                data-translate-key="resume"
-                class="pause-menu__resume-btn button button--wide"
-              ></button>
-            </li>
-            <li>
-              <button
-                data-translate-key="restart"
-                class="pause-menu__restart-btn button button--wide"
-              ></button>
-            </li>
-            <li>
-              <button
-                data-translate-key="main_menu"
-                class="pause-menu__main-menu-btn button button--wide"
-              ></button>
-            </li>
-          </ul>
-        </div>
-      </dialog>
-
-      <dialog id="game-over" class="game-over dialog">
-        <div class="dialog__header">
-          <div data-translate-key="game_over" class="dialog__title"></div>
-        </div>
-        <div class="dialog__body">
-          <ul>
-            <li>
-              <button
-                data-translate-key="restart"
-                class="game-over__restart-btn button button--wide"
-              ></button>
-            </li>
-          </ul>
-        </div>
-      </dialog>
-    </div>
+      <div id="game-board" class="box hidden"></div>
   </body>
 </html>

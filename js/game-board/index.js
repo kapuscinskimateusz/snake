@@ -13,29 +13,21 @@ import {
   draw as drawFood,
   setFoodPosition,
 } from "./food.js";
-import { disableInput, enableInput } from "./input.js";
-import { open as openGameOver } from "./dialogs/game-over.js";
-import {
-  open as openPauseMenu,
-  close as closePauseMenu,
-} from "./dialogs/pause-menu.js";
+import { enableMovement, disableMovement } from "./movement.js";
 import { open as openMainMenu } from "../main-menu.js";
 
 const gameBoard = document.getElementById("game-board");
 
+let currentLevelObj = null;
+let isGameOver = false;
+
 let lastRenderTime = 0;
 
-export let isGameOver = false;
-export let isGamePaused = false;
-
 function gameLoop(currentTime) {
-  if (gameBoard.classList.contains("hidden")) return;
-
-  if (isGameOver) return openGameOver();
+  if (!currentLevelObj) return;
+  if (isGameOver) return;
 
   window.requestAnimationFrame(gameLoop);
-
-  if (isGamePaused) return;
 
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
   if (secondsSinceLastRender < 1 / snakeSpeed) return;
@@ -46,21 +38,30 @@ function gameLoop(currentTime) {
   if (!isGameOver) draw();
 }
 
-export function startGame(levelObj) {
+export function open(levelObj) {
   initLevel(levelObj);
   gameBoard.classList.remove("hidden");
-
-  enableInput();
+  enableMovement();
 
   window.requestAnimationFrame(gameLoop);
 }
 
-export function leaveGame() {
+export function close() {
   gameBoard.classList.add("hidden");
+  disableMovement();
 
-  disableInput({ clear: true });
-
+  currentLevelObj = null;
   openMainMenu();
+}
+
+function initLevel(levelObj) {
+  currentLevelObj = levelObj;
+  isGameOver = false;
+
+  setGridSize(gameBoard, levelObj.gridSize);
+  setSnakePosition(levelObj.snake.startPosition);
+  setSnakeSpeed(levelObj.snake.speed);
+  setFoodPosition(levelObj.food.startPosition);
 }
 
 function update() {
@@ -77,26 +78,6 @@ function draw() {
   drawFood(gameBoard);
 }
 
-function initLevel(levelObj) {
-  isGameOver = false;
-  isGamePaused = false;
-
-  setGridSize(gameBoard, levelObj.gridSize);
-  setSnakePosition(levelObj.snake.startPosition);
-  setSnakeSpeed(levelObj.snake.speed);
-  setFoodPosition(levelObj.food.startPosition);
-}
-
 function checkDeath() {
   isGameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
-}
-
-export function resumeGame() {
-  isGamePaused = false;
-  closePauseMenu();
-}
-
-export function pauseGame() {
-  isGamePaused = true;
-  openPauseMenu();
 }
