@@ -14,6 +14,11 @@ import {
   shouldDrawFood,
   setFoodPosition,
 } from "./food.js";
+import {
+  draw as drawObstacles,
+  obstacleCollision,
+  setObstacles,
+} from "./obstacles.js";
 import { enableMovement, disableMovement } from "./movement.js";
 import { open as openMainMenu } from "../main-menu.js";
 import { open as openGameOver } from "../dialogs/game-over.js";
@@ -66,6 +71,9 @@ function initLevel(levelObj) {
 
   setGridSize(staticArea, levelObj.gridSize);
   setFoodPosition(levelObj.food.startPosition);
+  setObstacles(levelObj.obstacles);
+  staticArea.innerHTML = "";
+  drawObstacles(staticArea);
 
   setGridSize(renderArea, levelObj.gridSize);
   setSnakePosition(levelObj.snake.startPosition);
@@ -92,5 +100,8 @@ function draw() {
 }
 
 function checkDeath() {
-  isGameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
+  isGameOver =
+    outsideGrid(getSnakeHead()) ||
+    snakeIntersection() ||
+    obstacleCollision(getSnakeHead());
 }

@@ -14,5 +14,26 @@
       "startPosition": { "x": 3, "y": 3 }
     },
     "obstacles": []
+  },
+  {
+    "level": 2,
+    "description": {
+      "pl": "Zjedz 10 jabłek, aby przejść do kolejnego poziomu. Uważaj na przeszkody!",
+      "en": "Eat 10 apples to advance to the next level. Watch out for obstacles!"
+    },
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 5
+    },
+    "food": {
+      "startPosition": { "x": 15, "y": 5 }
+    },
+    "obstacles": [
+      { "x": 5, "y": 5 },
+      { "x": 5, "y": 15 },
+      { "x": 15, "y": 15 },
+      { "x": 15, "y": 10 }
+    ]
   }
 ]

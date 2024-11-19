@@ -17,6 +17,11 @@
     background-color: var(--clr-snake-bg);
     border: 0.25vmin solid var(--clr-snake-border);
   }
+
+  .obstacle {
+    background-color: var(--clr-obstacle-bg);
+    border: 0.25vmin solid var(--clr-obstacle-border);
+  }
 }
 
 @keyframes pulse {

@@ -9,4 +9,6 @@ body {
   --clr-snake-bg: lime;
   --clr-snake-border: darkgreen;
   --clr-food-bg: red;
+  --clr-obstacle-bg: gray;
+  --clr-obstacle-border: dimgray;
 }
