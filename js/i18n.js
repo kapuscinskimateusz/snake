@@ -1,11 +1,15 @@
 let translations = {};
-let currentLanguage = null;
+export let currentLanguage = null;
 
 export async function changeLanguage(language) {
   await loadTranslations(language);
 
   currentLanguage = language;
   updateTexts();
+}
+
+export function translate(key) {
+  return translations[key] || key;
 }
 
 async function loadTranslations(language) {

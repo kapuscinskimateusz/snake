@@ -1,0 +1,11 @@
+body {
+  --ff-base: "PixelUniCode", monospace;
+
+  --clr-body-bg: green;
+  --clr-text: white;
+  --clr-accent: gold;
+
+  --clr-box-bg: black;
+  --clr-snake-bg: green;
+  --clr-food-bg: red;
+}

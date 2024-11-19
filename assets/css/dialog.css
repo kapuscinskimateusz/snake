@@ -1,0 +1,35 @@
+.dialog[open] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 90vmin;
+  padding: 2.5vmin 5vmin;
+  border: none;
+  outline: none;
+
+  .dialog__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vmin;
+
+    .dialog__title {
+      font-size: 12vmin;
+      white-space: nowrap;
+    }
+
+    .dialog__close-btn {
+      border: none;
+      background-color: transparent;
+      font-size: 2.5vmin;
+      cursor: pointer;
+    }
+  }
+
+  .dialog__body {
+    padding-block: 2.5vmin;
+    font-size: 5vmin;
+  }
+}

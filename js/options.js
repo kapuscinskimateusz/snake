@@ -1,21 +1,22 @@
 import { open as openMainMenu } from "./main-menu.js";
 import { changeLanguage } from "./i18n.js";
 
-const options = document.querySelector(".options");
-const languageFieldset = document.querySelector(".options__language");
-const backBtn = document.querySelector(".options__back-btn");
+const optionsView = document.getElementById("options-view");
+
+const optionsForm = document.getElementById("options-form");
+const backBtn = optionsView.querySelector(".back-btn");
 
 export function open() {
-  options.classList.remove("hidden");
+  optionsView.classList.remove("hidden");
 
-  languageFieldset.addEventListener("change", handleLanguage);
+  optionsForm.addEventListener("change", handleLanguage);
   backBtn.addEventListener("click", handleBack);
 }
 
 export function close() {
-  options.classList.add("hidden");
+  optionsView.classList.add("hidden");
 
-  languageFieldset.removeEventListener("change", handleLanguage);
+  optionsForm.removeEventListener("change", handleLanguage);
   backBtn.removeEventListener("click", handleBack);
 }
 

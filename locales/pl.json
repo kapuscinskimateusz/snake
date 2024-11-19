@@ -4,5 +4,9 @@
   "exit": "Wyjdź",
   "volume": "Głośność",
   "language": "Język",
-  "back": "Wróć"
+  "back": "Wróć",
+  "level": "Poziom",
+  "goal": "Cel",
+  "start_level": "Rozpocznij poziom",
+  "cancel": "Anuluj"
 }

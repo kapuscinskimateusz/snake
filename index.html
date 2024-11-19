@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script type="module" src="app.js" defer></script>
   </head>
   <body>
@@ -26,34 +26,50 @@
         </ul>
       </nav>
 
-      <section class="campaign box box--menu hidden">
+      <section class="campaign-view box box--menu hidden">
         <header>
           <h1 data-translate-key="campaign" class="box__title"></h1>
         </header>
-        <div class="campaign__level-grid"></div>
-        <button data-translate-key="back" class="campaign__back-btn button"></button>
+
+        <div class="campaign-view__level-grid"></div>
+
+        <button data-translate-key="back" class="campaign-view__back-btn button"></button>
+
+        <dialog class="campaign-view__level-dialog dialog">
+          <div class="dialog__header">
+            <div class="dialog__title"></div>
+            <button class="dialog__close-btn">&#x2716;</button>
+          </div>
+          <div class="dialog__body"></div>
+          <div class="dialog__footer">
+            <button data-translate-key="start_level" class="campaign-view__start-btn"></button>
+            <button data-translate-key="cancel" class="dialog__cancel-btn"></button>
+          </div>
+        </dialog>
       </section>
 
-      <section class="options box box--menu hidden">
+      <section id="options-view" class="box box--menu hidden">
         <header>
           <h1 data-translate-key="options" class="box__title"></h1>
         </header>
-        <form class="form">
-          <fieldset class="options__language form__fieldset">
+
+        <form id="options-form" class="form">
+          <fieldset class="form__fieldset">
             <legend data-translate-key="language" class="form__legend"></legend>
-            <div class="form__controls">
+            <div class="form__controls--flex-row">
               <div class="form__control">
-                <input type="radio" name="language" id="language-pl" value="pl">
-                <label for="language-pl">PL</label>
+                <input type="radio" name="language" id="language-pl" value="pl" class="form__input--radio">
+                <label for="language-pl" class="form__label">PL</label>
               </div>
               <div class="form__control">
-                <input type="radio" name="language" id="language-en" value="en">
-                <label for="language-en">EN</label>
+                <input type="radio" name="language" id="language-en" value="en" class="form__input--radio">
+                <label for="language-en" class="form__label">EN</label>
               </div>
             </div>
           </fieldset>
         </form>
-        <button data-translate-key="back" class="options__back-btn button"></button>
+
+        <button data-translate-key="back" class="back-btn button"></button>
       </section>
 
       <div id="game-board" class="box hidden"></div>

@@ -1,11 +1,12 @@
 import { open as openMainMenu } from "./main-menu.js";
-import { open as openGameBoard } from "./game-board/index.js";
+import { open as openLevelDialog } from "./dialogs/level-dialog.js";
 
-const campaign = document.querySelector(".campaign");
-const backBtn = document.querySelector(".campaign__back-btn");
+const campaignView = document.querySelector(".campaign-view");
+
+const backBtn = campaignView.querySelector(".campaign-view__back-btn");
 
 export async function open() {
-  campaign.classList.remove("hidden");
+  campaignView.classList.remove("hidden");
 
   const levels = await loadLevels();
   displayLevels(levels);
@@ -14,7 +15,7 @@ export async function open() {
 }
 
 export function close() {
-  campaign.classList.add("hidden");
+  campaignView.classList.add("hidden");
 
   backBtn.removeEventListener("click", handleBack);
 }
@@ -39,14 +40,14 @@ async function loadLevels() {
 }
 
 function displayLevels(levels) {
-  const levelGrid = campaign.querySelector(".campaign__level-grid");
+  const levelGrid = campaignView.querySelector(".campaign-view__level-grid");
   levelGrid.innerHTML = "";
 
   levels.forEach((level) => {
     const levelBtn = document.createElement("button");
-    levelBtn.classList.add("campaign__level-btn");
+    levelBtn.classList.add("campaign-view__level-btn");
     levelBtn.textContent = level.level;
-    levelBtn.addEventListener("click", () => handleStartLevel(level));
+    levelBtn.addEventListener("click", () => handleLevel(level));
     levelBtn.disabled = !isLevelUnlocked(level.level);
     levelGrid.appendChild(levelBtn);
   });
@@ -58,7 +59,6 @@ function isLevelUnlocked(level) {
   return level <= lastUnlockedLevel;
 }
 
-function handleStartLevel(level) {
-  close();
-  openGameBoard(level);
+function handleLevel(level) {
+  openLevelDialog(level);
 }

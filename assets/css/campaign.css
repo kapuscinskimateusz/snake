@@ -1,4 +1,4 @@
-.campaign__level-grid {
+.campaign-view__level-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 5vmin;
@@ -6,16 +6,16 @@
   padding-inline: 5vmin;
 }
 
-.campaign__level-btn {
+.campaign-view__level-btn {
   aspect-ratio: 1/1;
   border: none;
-  background-color: white;
-  font-family: "PixelUniCode", monospace;
+  background-color: var(--clr-text);
+  font-family: var(--ff-base);
   font-size: 8vmin;
   cursor: pointer;
 
   &:hover {
-    background-color: gold;
+    background-color: var(--clr-accent);
   }
 
   &:disabled {

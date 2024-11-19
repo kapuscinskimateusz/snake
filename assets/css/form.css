@@ -6,20 +6,20 @@
   font-size: 8vmin;
 }
 
-.form__controls {
+.form__controls--flex-row {
   display: flex;
   align-items: center;
   gap: 5vmin;
 }
 
-label {
+.form__label {
   font-size: 8vmin;
 }
 
-input[type="radio"] {
+.form__input--radio {
   display: none;
 
-  & + label {
+  & + .form__label {
     cursor: pointer;
 
     &::before {
@@ -29,8 +29,8 @@ input[type="radio"] {
     }
   }
 
-  &:checked + label {
-    color: gold;
+  &:checked + .form__label {
+    color: var(--clr-accent);
 
     &::before {
       content: "\25AA";

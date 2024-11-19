@@ -1,14 +1,14 @@
 .button {
   border: none;
   background-color: transparent;
-  color: white;
-  font-family: "PixelUniCode", monospace;
+  color: var(--clr-text);
+  font-family: var(--ff-base);
   font-size: 8vmin;
   text-transform: uppercase;
   cursor: pointer;
 
   &:hover {
-    color: gold;
+    color: var(--clr-accent);
 
     &::before {
       content: ">";

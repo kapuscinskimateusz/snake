@@ -4,5 +4,9 @@
   "exit": "Exit",
   "volume": "Volume",
   "language": "Language",
-  "back": "Back"
+  "back": "Back",
+  "level": "Level",
+  "goal": "Goal",
+  "start_level": "Start Level",
+  "cancel": "Cancel"
 }

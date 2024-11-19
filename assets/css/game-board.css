@@ -4,10 +4,10 @@
   }
 
   .snake {
-    background-color: green;
+    background-color: var(--clr-snake-bg);
   }
 
   .food {
-    background-color: red;
+    background-color: var(--clr-food-bg);
   }
 }
