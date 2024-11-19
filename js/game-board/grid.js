@@ -1,10 +1,10 @@
 export let gridSize = null;
 
-export function setGridSize(gameBoard, size) {
+export function setGridSize(area, size) {
   gridSize = size;
 
-  gameBoard.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-  gameBoard.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  area.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  area.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 }
 
 export function outsideGrid(position) {

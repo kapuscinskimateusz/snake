@@ -5,10 +5,10 @@ import { open as openGameBoard } from "../game-board/index.js";
 const levelDialog = document.querySelector(".campaign-view__level-dialog");
 
 const dialogTitle = levelDialog.querySelector(".dialog__title");
-const closeBtn = levelDialog.querySelector(".dialog__close-btn");
 const dialogBody = levelDialog.querySelector(".dialog__body");
-const startLevelBtn = levelDialog.querySelector(".campaign-view__start-btn");
+const closeBtn = levelDialog.querySelector(".dialog__close-btn");
 const cancelBtn = levelDialog.querySelector(".dialog__cancel-btn");
+const startBtn = levelDialog.querySelector(".campaign-view__start-btn");
 
 let currentLevelObj = null;
 
@@ -19,16 +19,18 @@ export function open(levelObj) {
   levelDialog.showModal();
 
   closeBtn.addEventListener("click", close);
-  startLevelBtn.addEventListener("click", handleStartLevel);
   cancelBtn.addEventListener("click", close);
+  startBtn.addEventListener("click", handleStart);
 }
 
 export function close() {
+  currentLevelObj = null;
+
   levelDialog.close();
 
   closeBtn.removeEventListener("click", close);
-  startLevelBtn.removeEventListener("click", handleStartLevel);
   cancelBtn.removeEventListener("click", close);
+  startBtn.removeEventListener("click", handleStart);
 }
 
 function updateTexts(levelObj) {
@@ -37,9 +39,11 @@ function updateTexts(levelObj) {
     translate("goal") + `: ${levelObj.description[currentLanguage]}`;
 }
 
-function handleStartLevel() {
+function handleStart() {
+  const levelObj = currentLevelObj;
+
   close();
   closeCampaign();
 
-  openGameBoard(currentLevelObj);
+  openGameBoard(levelObj);
 }

@@ -5,14 +5,21 @@ export function enableMovement() {
   window.addEventListener("keydown", handleMovement);
 }
 
-export function disableMovement() {
+export function disableMovement({ clear = false } = {}) {
   window.removeEventListener("keydown", handleMovement);
+
+  if (clear) clearDirection();
 }
 
 export function getMovementDirection() {
   lastDirection = direction;
 
   return direction;
+}
+
+function clearDirection() {
+  direction = { x: 0, y: 0 };
+  lastDirection = { x: 0, y: 0 };
 }
 
 function handleMovement(event) {

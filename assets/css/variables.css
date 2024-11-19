@@ -6,6 +6,7 @@ body {
   --clr-accent: gold;
 
   --clr-box-bg: black;
-  --clr-snake-bg: green;
+  --clr-snake-bg: lime;
+  --clr-snake-border: darkgreen;
   --clr-food-bg: red;
 }

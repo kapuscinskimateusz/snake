@@ -11,12 +11,17 @@ import {
 import {
   update as updateFood,
   draw as drawFood,
+  shouldDrawFood,
   setFoodPosition,
 } from "./food.js";
 import { enableMovement, disableMovement } from "./movement.js";
 import { open as openMainMenu } from "../main-menu.js";
+import { open as openGameOver } from "../dialogs/game-over.js";
 
-const gameBoard = document.getElementById("game-board");
+const gameBoard = document.querySelector(".game-board");
+
+const staticArea = gameBoard.querySelector(".game-board__static-area");
+const renderArea = gameBoard.querySelector(".game-board__render-area");
 
 let currentLevelObj = null;
 let isGameOver = false;
@@ -24,8 +29,8 @@ let isGameOver = false;
 let lastRenderTime = 0;
 
 function gameLoop(currentTime) {
-  if (!currentLevelObj) return;
-  if (isGameOver) return;
+  if (!currentLevelObj) return; // If the game board is closed
+  if (isGameOver) return openGameOver();
 
   window.requestAnimationFrame(gameLoop);
 
@@ -39,7 +44,9 @@ function gameLoop(currentTime) {
 }
 
 export function open(levelObj) {
+  currentLevelObj = levelObj;
   initLevel(levelObj);
+
   gameBoard.classList.remove("hidden");
   enableMovement();
 
@@ -48,20 +55,21 @@ export function open(levelObj) {
 
 export function close() {
   gameBoard.classList.add("hidden");
-  disableMovement();
+  disableMovement({ clear: true });
 
   currentLevelObj = null;
   openMainMenu();
 }
 
 function initLevel(levelObj) {
-  currentLevelObj = levelObj;
   isGameOver = false;
 
-  setGridSize(gameBoard, levelObj.gridSize);
+  setGridSize(staticArea, levelObj.gridSize);
+  setFoodPosition(levelObj.food.startPosition);
+
+  setGridSize(renderArea, levelObj.gridSize);
   setSnakePosition(levelObj.snake.startPosition);
   setSnakeSpeed(levelObj.snake.speed);
-  setFoodPosition(levelObj.food.startPosition);
 }
 
 function update() {
@@ -72,10 +80,15 @@ function update() {
 }
 
 function draw() {
-  gameBoard.innerHTML = "";
+  renderArea.innerHTML = "";
+  drawSnake(renderArea);
 
-  drawSnake(gameBoard);
-  drawFood(gameBoard);
+  if (shouldDrawFood) {
+    const foodElement = staticArea.querySelector(".food");
+    foodElement?.remove();
+
+    drawFood(staticArea);
+  }
 }
 
 function checkDeath() {

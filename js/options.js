@@ -1,10 +1,10 @@
-import { open as openMainMenu } from "./main-menu.js";
 import { changeLanguage } from "./i18n.js";
+import { open as openMainMenu } from "./main-menu.js";
 
-const optionsView = document.getElementById("options-view");
+const optionsView = document.querySelector(".options-view");
 
-const optionsForm = document.getElementById("options-form");
-const backBtn = optionsView.querySelector(".back-btn");
+const optionsForm = optionsView.querySelector(".options-view__form");
+const backBtn = optionsView.querySelector(".options-view__back-btn");
 
 export function open() {
   optionsView.classList.remove("hidden");

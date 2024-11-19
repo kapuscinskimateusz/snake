@@ -7,6 +7,9 @@
   "back": "Back",
   "level": "Level",
   "goal": "Goal",
-  "start_level": "Start Level",
-  "cancel": "Cancel"
+  "start_level": "Start level",
+  "cancel": "Cancel",
+  "game_over": "Game over",
+  "play_again": "Play again",
+  "main_menu": "Main menu"
 }

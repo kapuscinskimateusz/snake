@@ -15,13 +15,22 @@
         </header>
         <ul>
           <li>
-            <button data-translate-key="campaign" class="main-menu__campaign-btn button button--wide"></button>
+            <button
+              data-translate-key="campaign"
+              class="main-menu__campaign-btn button button--wide"
+            ></button>
           </li>
           <li>
-            <button data-translate-key="options" class="main-menu__options-btn button button--wide"></button>
+            <button
+              data-translate-key="options"
+              class="main-menu__options-btn button button--wide"
+            ></button>
           </li>
           <li>
-            <button data-translate-key="exit" class="main-menu__exit-btn button button--wide"></button>
+            <button
+              data-translate-key="exit"
+              class="main-menu__exit-btn button button--wide"
+            ></button>
           </li>
         </ul>
       </nav>
@@ -30,10 +39,11 @@
         <header>
           <h1 data-translate-key="campaign" class="box__title"></h1>
         </header>
-
         <div class="campaign-view__level-grid"></div>
-
-        <button data-translate-key="back" class="campaign-view__back-btn button"></button>
+        <button
+          data-translate-key="back"
+          class="campaign-view__back-btn button"
+        ></button>
 
         <dialog class="campaign-view__level-dialog dialog">
           <div class="dialog__header">
@@ -42,36 +52,80 @@
           </div>
           <div class="dialog__body"></div>
           <div class="dialog__footer">
-            <button data-translate-key="start_level" class="campaign-view__start-btn"></button>
-            <button data-translate-key="cancel" class="dialog__cancel-btn"></button>
+            <button
+              data-translate-key="start_level"
+              class="campaign-view__start-btn"
+            ></button>
+            <button
+              data-translate-key="cancel"
+              class="dialog__cancel-btn"
+            ></button>
           </div>
         </dialog>
       </section>
 
-      <section id="options-view" class="box box--menu hidden">
+      <section class="options-view box box--menu hidden">
         <header>
           <h1 data-translate-key="options" class="box__title"></h1>
         </header>
 
-        <form id="options-form" class="form">
+        <form class="options-view__form form">
           <fieldset class="form__fieldset">
             <legend data-translate-key="language" class="form__legend"></legend>
-            <div class="form__controls--flex-row">
+            <div class="form__controls form__controls--flex-row">
               <div class="form__control">
-                <input type="radio" name="language" id="language-pl" value="pl" class="form__input--radio">
+                <input
+                  type="radio"
+                  name="language"
+                  id="language-pl"
+                  value="pl"
+                  class="form__input--radio"
+                />
                 <label for="language-pl" class="form__label">PL</label>
               </div>
               <div class="form__control">
-                <input type="radio" name="language" id="language-en" value="en" class="form__input--radio">
+                <input
+                  type="radio"
+                  name="language"
+                  id="language-en"
+                  value="en"
+                  class="form__input--radio"
+                />
                 <label for="language-en" class="form__label">EN</label>
               </div>
             </div>
           </fieldset>
         </form>
 
-        <button data-translate-key="back" class="back-btn button"></button>
+        <button
+          data-translate-key="back"
+          class="options-view__back-btn button"
+        ></button>
       </section>
 
-      <div id="game-board" class="box hidden"></div>
+      <section class="game-board box hidden">
+        <div class="game-board__static-area"></div>
+        <div class="game-board__render-area">
+          <!-- Dynamic elements, e.g. snake -->
+        </div>
+
+        <dialog class="game-over dialog">
+          <div class="dialog__header">
+            <div data-translate-key="game_over" class="dialog__title"></div>
+          </div>
+          <div class="dialog__body">Score: 0</div>
+          <div class="dialog__footer">
+            <button
+              data-translate-key="play_again"
+              class="game-over__play-again-btn"
+            ></button>
+            <button
+              data-translate-key="main_menu"
+              class="game-over__main-menu-btn"
+            ></button>
+          </div>
+        </dialog>
+      </section>
+    </div>
   </body>
 </html>

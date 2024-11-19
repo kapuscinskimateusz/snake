@@ -8,5 +8,8 @@
   "level": "Poziom",
   "goal": "Cel",
   "start_level": "Rozpocznij poziom",
-  "cancel": "Anuluj"
+  "cancel": "Anuluj",
+  "game_over": "Koniec gry",
+  "play_again": "Zagraj ponownie",
+  "main_menu": "Menu główne"
 }
