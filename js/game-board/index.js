@@ -71,7 +71,7 @@ function initLevel(levelObj) {
 
   setGridSize(staticArea, levelObj.gridSize);
   setFoodPosition(levelObj.food.startPosition);
-  setObstacles(levelObj.obstacles);
+  setObstacles(levelObj.obstacles, { includeWalls: levelObj.walls });
   staticArea.innerHTML = "";
   drawObstacles(staticArea);
 

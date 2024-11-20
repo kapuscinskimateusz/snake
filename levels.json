@@ -13,6 +13,7 @@
     "food": {
       "startPosition": { "x": 3, "y": 3 }
     },
+    "walls": false,
     "obstacles": []
   },
   {
@@ -29,11 +30,35 @@
     "food": {
       "startPosition": { "x": 15, "y": 5 }
     },
+    "walls": false,
     "obstacles": [
       { "x": 5, "y": 5 },
       { "x": 5, "y": 15 },
       { "x": 15, "y": 15 },
       { "x": 15, "y": 10 }
+    ]
+  },
+  {
+    "level": 3,
+    "description": {
+      "pl": "Zjedz 15 jabłek, aby przejść do kolejnego poziomu. Uważaj na przeszkody i ściany!",
+      "en": "Eat 15 apples to advance to the next level. Watch out for obstacles and walls!"
+    },
+    "gridSize": 20,
+    "snake": {
+      "startPosition": { "x": 10, "y": 10 },
+      "speed": 6
+    },
+    "food": {
+      "startPosition": { "x": 12, "y": 8 }
+    },
+    "walls": true,
+    "obstacles": [
+      { "x": 6, "y": 6 },
+      { "x": 7, "y": 6 },
+      { "x": 14, "y": 14 },
+      { "x": 15, "y": 13 },
+      { "x": 15, "y": 14 }
     ]
   }
 ]

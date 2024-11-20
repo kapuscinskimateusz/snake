@@ -1,5 +1,6 @@
 import { randomGridPosition } from "./grid.js";
 import { expandSnake, onSnake } from "./snake.js";
+import { onObstacle } from "./obstacles.js";
 
 let food = null;
 export let shouldDrawFood = true;
@@ -31,7 +32,7 @@ export function setFoodPosition(position) {
 
 function getRandomFoodPosition() {
   let newFoodPosition;
-  while (!newFoodPosition || onSnake(newFoodPosition)) {
+  while (!newFoodPosition || onSnake(newFoodPosition) || onObstacle(newFoodPosition)) {
     newFoodPosition = randomGridPosition();
   }
 
