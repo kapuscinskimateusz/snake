@@ -2,13 +2,17 @@ import { currentLanguage, translate } from "../i18n.js";
 import { close as closeCampaign } from "../campaign.js";
 import { open as openGameBoard } from "../game-board/index.js";
 
-const levelDialog = document.querySelector(".campaign-view__level-dialog");
+const levelSelectionDialog = document.querySelector(
+  ".campaign-view__level-selection"
+);
 
-const dialogTitle = levelDialog.querySelector(".dialog__title");
-const dialogBody = levelDialog.querySelector(".dialog__body");
-const closeBtn = levelDialog.querySelector(".dialog__close-btn");
-const cancelBtn = levelDialog.querySelector(".dialog__cancel-btn");
-const startBtn = levelDialog.querySelector(".campaign-view__start-btn");
+const dialogTitle = levelSelectionDialog.querySelector(".dialog__title");
+const dialogBody = levelSelectionDialog.querySelector(".dialog__body");
+const closeBtn = levelSelectionDialog.querySelector(".dialog__close-btn");
+const cancelBtn = levelSelectionDialog.querySelector(".dialog__cancel-btn");
+const startBtn = levelSelectionDialog.querySelector(
+  ".campaign-view__start-btn"
+);
 
 let currentLevelObj = null;
 
@@ -16,7 +20,7 @@ export function open(levelObj) {
   currentLevelObj = levelObj;
   updateTexts(levelObj);
 
-  levelDialog.showModal();
+  levelSelectionDialog.showModal();
 
   closeBtn.addEventListener("click", close);
   cancelBtn.addEventListener("click", close);
@@ -26,7 +30,7 @@ export function open(levelObj) {
 export function close() {
   currentLevelObj = null;
 
-  levelDialog.close();
+  levelSelectionDialog.close();
 
   closeBtn.removeEventListener("click", close);
   cancelBtn.removeEventListener("click", close);

@@ -14,7 +14,11 @@
       "startPosition": { "x": 3, "y": 3 }
     },
     "walls": false,
-    "obstacles": []
+    "obstacles": [],
+    "completionCriteria": {
+      "foodToEat": 5,
+      "timeLimit": null
+    }
   },
   {
     "level": 2,
@@ -36,7 +40,11 @@
       { "x": 5, "y": 15 },
       { "x": 15, "y": 15 },
       { "x": 15, "y": 10 }
-    ]
+    ],
+    "completionCriteria": {
+      "foodToEat": 10,
+      "timeLimit": null
+    }
   },
   {
     "level": 3,
@@ -59,6 +67,10 @@
       { "x": 14, "y": 14 },
       { "x": 15, "y": 13 },
       { "x": 15, "y": 14 }
-    ]
+    ],
+    "completionCriteria": {
+      "foodToEat": 15,
+      "timeLimit": null
+    }
   }
 ]

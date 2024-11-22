@@ -45,7 +45,7 @@
           class="campaign-view__back-btn button"
         ></button>
 
-        <dialog class="campaign-view__level-dialog dialog">
+        <dialog class="campaign-view__level-selection dialog">
           <div class="dialog__header">
             <div class="dialog__title"></div>
             <button class="dialog__close-btn">&#x2716;</button>
@@ -54,11 +54,11 @@
           <div class="dialog__footer">
             <button
               data-translate-key="start_level"
-              class="campaign-view__start-btn"
+              class="campaign-view__start-btn dialog__button"
             ></button>
             <button
               data-translate-key="cancel"
-              class="dialog__cancel-btn"
+              class="dialog__cancel-btn dialog__button"
             ></button>
           </div>
         </dialog>
@@ -117,11 +117,34 @@
           <div class="dialog__footer">
             <button
               data-translate-key="play_again"
-              class="game-over__play-again-btn"
+              class="game-over__play-again-btn dialog__button"
             ></button>
             <button
               data-translate-key="main_menu"
-              class="game-over__main-menu-btn"
+              class="game-over__main-menu-btn dialog__button"
+            ></button>
+          </div>
+        </dialog>
+
+        <dialog class="level-completion dialog">
+          <div class="dialog__header">
+            <div
+              data-translate-key="level_completed"
+              class="dialog__title"
+            ></div>
+          </div>
+          <div class="dialog__body">
+            <span data-translate-key="level_completion_congratulations"></span>
+            <span class="level-completion__completed-level"></span>!
+          </div>
+          <div class="dialog__footer">
+            <button
+              data-translate-key="next_level"
+              class="level-completion__next-level-btn dialog__button"
+            ></button>
+            <button
+              data-translate-key="back_to_campaign"
+              class="level-completion__back-to-campaign-btn dialog__button"
             ></button>
           </div>
         </dialog>

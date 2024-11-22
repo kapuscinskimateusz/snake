@@ -20,8 +20,9 @@ import {
   setObstacles,
 } from "./obstacles.js";
 import { enableMovement, disableMovement } from "./movement.js";
-import { open as openMainMenu } from "../main-menu.js";
+import { unlockLevel } from "../campaign.js";
 import { open as openGameOver } from "../dialogs/game-over.js";
+import { open as openLevelCompletion } from "../dialogs/level-completion.js";
 
 const gameBoard = document.querySelector(".game-board");
 
@@ -29,13 +30,27 @@ const staticArea = gameBoard.querySelector(".game-board__static-area");
 const renderArea = gameBoard.querySelector(".game-board__render-area");
 
 let currentLevelObj = null;
+
+let gameState = {
+  foodEaten: 0,
+  timeElapsed: null,
+};
+
 let isGameOver = false;
+let isLevelCompleted = false;
 
 let lastRenderTime = 0;
 
 function gameLoop(currentTime) {
   if (!currentLevelObj) return; // If the game board is closed
+
   if (isGameOver) return openGameOver();
+
+  if (isLevelCompleted) {
+    unlockLevel(currentLevelObj.level + 1);
+    openLevelCompletion(currentLevelObj.level);
+    return;
+  }
 
   window.requestAnimationFrame(gameLoop);
 
@@ -63,11 +78,16 @@ export function close() {
   disableMovement({ clear: true });
 
   currentLevelObj = null;
-  openMainMenu();
 }
 
 function initLevel(levelObj) {
   isGameOver = false;
+  isLevelCompleted = false;
+
+  gameState = {
+    foodEaten: 0,
+    timeElapsed: null,
+  };
 
   setGridSize(staticArea, levelObj.gridSize);
   setFoodPosition(levelObj.food.startPosition);
@@ -104,4 +124,15 @@ function checkDeath() {
     outsideGrid(getSnakeHead()) ||
     snakeIntersection() ||
     obstacleCollision(getSnakeHead());
+}
+
+export function incrementFoodEaten() {
+  gameState.foodEaten++;
+
+  checkLevelCompletion();
+}
+
+function checkLevelCompletion() {
+  isLevelCompleted =
+    gameState.foodEaten >= currentLevelObj.completionCriteria.foodToEat;
 }

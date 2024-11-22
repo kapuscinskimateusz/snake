@@ -11,5 +11,9 @@
   "cancel": "Cancel",
   "game_over": "Game over",
   "play_again": "Play again",
-  "main_menu": "Main menu"
+  "main_menu": "Main menu",
+  "level_completed": "Level completed",
+  "level_completion_congratulations": "Congratulations! You have successfully completed the level",
+  "next_level": "Next level",
+  "back_to_campaign": "Back to campaign"
 }

@@ -30,6 +30,7 @@ export function draw(renderArea) {
 
 export function setSnakePosition(position) {
   snakeBody = [{ x: position.x, y: position.y }];
+  newSegments = 0;
 }
 
 export function setSnakeSpeed(speed) {

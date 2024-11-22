@@ -32,4 +32,25 @@
     padding-block: 2.5vmin;
     font-size: 5vmin;
   }
+
+  .dialog__footer {
+    display: flex;
+    align-items: center;
+    gap: 2.5vmin;
+
+    .dialog__button {
+      flex-grow: 1;
+      border: 0.25vmin solid black;
+      background-color: transparent;
+      font-family: var(--ff-base);
+      font-size: 5vmin;
+      text-transform: uppercase;
+      padding-inline: 5vmin;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--clr-accent);
+      }
+    }
+  }
 }

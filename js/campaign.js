@@ -1,5 +1,5 @@
 import { open as openMainMenu } from "./main-menu.js";
-import { open as openLevelDialog } from "./dialogs/level-dialog.js";
+import { open as openLevelSelection } from "./dialogs/level-selection.js";
 
 const campaignView = document.querySelector(".campaign-view");
 
@@ -25,7 +25,7 @@ function handleBack() {
   openMainMenu();
 }
 
-async function loadLevels() {
+export async function loadLevels() {
   try {
     const response = await fetch("levels.json");
     if (!response.ok) {
@@ -59,6 +59,14 @@ function isLevelUnlocked(level) {
   return level <= lastUnlockedLevel;
 }
 
+export function unlockLevel(level) {
+  const lastUnlockedLevel = +localStorage.getItem("lastUnlockedLevel") || 1;
+
+  if (level > lastUnlockedLevel) {
+    localStorage.setItem("lastUnlockedLevel", `${level}`);
+  }
+}
+
 function handleLevel(level) {
-  openLevelDialog(level);
+  openLevelSelection(level);
 }
