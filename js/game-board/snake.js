@@ -1,4 +1,5 @@
 import { equalPositions } from "../../utils/equalPositions.js";
+import { gridSize } from "./grid.js";
 import { getMovementDirection } from "./movement.js";
 
 let snakeBody = [];
@@ -63,4 +64,17 @@ function addSegments() {
   }
 
   newSegments = 0;
+}
+
+function wrapCoordinate(coordinate) {
+  return coordinate < 1 ? gridSize : coordinate > gridSize ? 1 : coordinate;
+}
+
+export function wrapSnakePosition() {
+  for (let i = 0; i < snakeBody.length; i++) {
+    snakeBody[i] = {
+      x: wrapCoordinate(snakeBody[i].x),
+      y: wrapCoordinate(snakeBody[i].y),
+    };
+  }
 }

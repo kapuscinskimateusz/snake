@@ -1,4 +1,4 @@
-import { setGridSize, outsideGrid } from "./grid.js";
+import { setGridSize } from "./grid.js";
 import {
   update as updateSnake,
   draw as drawSnake,
@@ -7,6 +7,7 @@ import {
   snakeIntersection,
   setSnakePosition,
   setSnakeSpeed,
+  wrapSnakePosition,
 } from "./snake.js";
 import {
   update as updateFood,
@@ -102,6 +103,7 @@ function initLevel(levelObj) {
 
 function update() {
   updateSnake();
+  wrapSnakePosition();
   updateFood();
 
   checkDeath();
@@ -120,10 +122,7 @@ function draw() {
 }
 
 function checkDeath() {
-  isGameOver =
-    outsideGrid(getSnakeHead()) ||
-    snakeIntersection() ||
-    obstacleCollision(getSnakeHead());
+  isGameOver = snakeIntersection() || obstacleCollision(getSnakeHead());
 }
 
 export function incrementFoodEaten() {
